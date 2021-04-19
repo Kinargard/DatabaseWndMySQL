@@ -4,6 +4,7 @@
         public LogInForm() {
             InitializeComponent();
             LInForm = this;
+            _ = new Data.Controls.FMainPanel.CLogIn();
         }
     }
 }
