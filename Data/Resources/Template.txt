@@ -1,0 +1,21 @@
+#region Экземпляры
+#endregion
+
+#region Поля
+#endregion
+
+#region Методы
+#endregion
+
+#region События
+#endregion
+
+#region Свойства
+#endregion
+
+#region Конструкторы
+#endregion
+try {
+
+}
+catch (System.Exception Ex) { System.Windows.Forms.MessageBox.Show(Ex.Message); }
