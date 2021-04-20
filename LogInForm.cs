@@ -5,6 +5,7 @@
             InitializeComponent();
             LInForm = this;
             _ = new Data.Controls.FMainPanel.CLogIn();
+            _ = new Data.Controls.FMainPanel.CLogInBut();
         }
     }
 }
