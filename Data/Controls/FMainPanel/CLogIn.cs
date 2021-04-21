@@ -1,5 +1,5 @@
 ﻿namespace DatabaseWndMySQL.Data.Controls.FMainPanel {
-    class CLogIn {
+    public class CLogIn {
         #region Экземпляры
         private static readonly System.Windows.Forms.Label CCaption = new System.Windows.Forms.Label();
         private static readonly System.Windows.Forms.Label LoginCaption = new System.Windows.Forms.Label();
@@ -57,7 +57,7 @@
                 PassTBox.Location = new System.Drawing.Point(CCaption.Location.X, 165);
                 PassTBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
                 PassTBox.BackColor = System.Drawing.SystemColors.Control;
-                PassTBox.PasswordChar = '*';
+                //PassTBox.PasswordChar = '*';
             }
             catch (System.Exception Ex) { System.Windows.Forms.MessageBox.Show(Ex.Message); }
         }
@@ -86,9 +86,15 @@
         #region Свойства
         public struct Caption {
             public struct Location {
-                public static int X { get { return CCaption.Location.X; } }
-                public static int Y { get { return CCaption.Location.Y; } }
+                public static int X { get => CCaption.Location.X; }
+                public static int Y { get => CCaption.Location.Y; }
             }
+        }
+        public struct TextBoxLogin {
+            public static string Text { get => LoginTBox.Text; set { LoginTBox.Text = value; } }
+        }
+        public struct TextBoxPass {
+            public static string Text { get => PassTBox.Text; set { PassTBox.Text = value; } }
         }
         #endregion
 
