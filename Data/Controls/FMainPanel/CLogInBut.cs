@@ -1,10 +1,5 @@
 ﻿namespace DatabaseWndMySQL.Data.Controls.FMainPanel {
-    class CLogInBut {
-        #region Экземпляры
-        private static readonly System.Windows.Forms.Panel LogInBut = new System.Windows.Forms.Panel();
-        private static readonly System.Windows.Forms.Label CCaption = new System.Windows.Forms.Label();
-        #endregion
-
+    public class CLogInBut {
         #region Поля
 
         #endregion
@@ -46,7 +41,7 @@
                         CDatabaseCon DataConn = new CDatabaseCon();
                         System.Data.DataTable table = new System.Data.DataTable();
                         MySql.Data.MySqlClient.MySqlDataAdapter adapter = new MySql.Data.MySqlClient.MySqlDataAdapter();
-                        string com = "SELECT * FROM `Права` WHERE `Логин` = @UsLogin AND `Пароль` = @UsPass;";
+                        string com = "SELECT * FROM Права WHERE Логин = @UsLogin AND Пароль = @UsPass;";
                         MySql.Data.MySqlClient.MySqlCommand command = new MySql.Data.MySqlClient.MySqlCommand(com, DataConn.GetConnection());
                         command.Parameters.Add("@UsLogin", MySql.Data.MySqlClient.MySqlDbType.VarChar).Value = login;
                         command.Parameters.Add("@UsPass", MySql.Data.MySqlClient.MySqlDbType.VarChar).Value = pass;
@@ -64,10 +59,6 @@
         }
         #endregion
 
-        #region События
-        
-        #endregion
-
         #region Свойства
 
         #endregion
@@ -82,6 +73,11 @@
             }
             catch (System.Exception Ex) { System.Windows.Forms.MessageBox.Show(Ex.Message); }
         }
+        #endregion
+
+        #region Экземпляры
+        private static readonly System.Windows.Forms.Panel LogInBut = new System.Windows.Forms.Panel();
+        private static readonly System.Windows.Forms.Label CCaption = new System.Windows.Forms.Label();
         #endregion
     }
 }

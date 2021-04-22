@@ -1,13 +1,7 @@
-#region Экземпляры
-#endregion
-
 #region Поля
 #endregion
 
 #region Методы
-#endregion
-
-#region События
 #endregion
 
 #region Свойства
@@ -15,6 +9,10 @@
 
 #region Конструкторы
 #endregion
+
+#region Экземпляры
+#endregion
+
 try {
 
 }

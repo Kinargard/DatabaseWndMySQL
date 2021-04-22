@@ -1,9 +1,5 @@
 ﻿namespace DatabaseWndMySQL.Data.Controls {
-    class CDataTable {
-        #region Экземпляры
-        private static readonly System.Windows.Forms.DataGridView DataTable = new System.Windows.Forms.DataGridView();
-        #endregion
-
+    public class CDataTable {
         #region Поля
 
         #endregion
@@ -21,18 +17,14 @@
         }
         #endregion
 
-        #region События
-
-        #endregion
-
         #region Свойства
         public struct Location {
-            public static int X { get { return DataTable.Location.X; } }
-            public static int Y { get { return DataTable.Location.Y; } }
+            public static int X { get => DataTable.Location.X; }
+            public static int Y { get => DataTable.Location.Y; }
         }
-        public static int Width { get { return DataTable.Width; } }
-        public static int Height { get { return DataTable.Height; } }
-        public static System.Drawing.Color BackgroundColor { get { return DataTable.BackgroundColor; } set { DataTable.BackgroundColor = value; } }
+        public static int Width { get => DataTable.Width; }
+        public static int Height { get => DataTable.Height; }
+        public static System.Drawing.Color BackgroundColor { get => DataTable.BackgroundColor; set { DataTable.BackgroundColor = value; } }
         #endregion
 
         #region Конструкторы
@@ -43,6 +35,10 @@
             }
             catch (System.Exception Ex) { System.Windows.Forms.MessageBox.Show(Ex.Message); }
         }
+        #endregion
+
+        #region Экземпляры
+        private static readonly System.Windows.Forms.DataGridView DataTable = new System.Windows.Forms.DataGridView();
         #endregion
     }
 }

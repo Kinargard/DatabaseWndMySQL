@@ -1,9 +1,5 @@
 ﻿namespace DatabaseWndMySQL.Data.Controls {
-    class CLeftPanel {
-        #region Экземпляры
-        private static readonly System.Windows.Forms.Panel LeftPanel = new System.Windows.Forms.Panel();
-        #endregion
-
+    public class CLeftPanel {
         #region Поля
 
         #endregion
@@ -20,18 +16,14 @@
         }
         #endregion
 
-        #region События
-
-        #endregion
-
         #region Свойства
         public struct Location {
-            public static int X { get { return LeftPanel.Location.X; } }
-            public static int Y { get { return LeftPanel.Location.Y; } }
+            public static int X { get => LeftPanel.Location.X; }
+            public static int Y { get => LeftPanel.Location.Y; }
         }
-        public static int Width { get { return LeftPanel.Width; } }
-        public static int Height { get { return LeftPanel.Height; } }
-        public static System.Drawing.Color BackColor { get { return LeftPanel.BackColor; } set { LeftPanel.BackColor = value; } }
+        public static int Width { get => LeftPanel.Width; }
+        public static int Height { get => LeftPanel.Height; }
+        public static System.Drawing.Color BackColor { get => LeftPanel.BackColor; set { LeftPanel.BackColor = value; } }
         #endregion
 
         #region Конструкторы
@@ -42,6 +34,10 @@
             }
             catch (System.Exception Ex) { System.Windows.Forms.MessageBox.Show(Ex.Message); }
         }
+        #endregion
+
+        #region Экземпляры
+        private static readonly System.Windows.Forms.Panel LeftPanel = new System.Windows.Forms.Panel();
         #endregion
     }
 }
