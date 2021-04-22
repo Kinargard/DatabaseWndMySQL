@@ -58,6 +58,7 @@
                 PassCaption.Location = new System.Drawing.Point(PassTBox.Location.X, 142);
                 PassCaption.Font = new System.Drawing.Font(LogInForm.LInForm.Font.Name, 11.0f, System.Drawing.FontStyle.Regular);
                 PassCaption.Text = "Пароль:";
+                PassCaption.BackColor = CaptionPass.BackColor;
             }
             catch (System.Exception Ex) { System.Windows.Forms.MessageBox.Show(Ex.Message); }
         }
@@ -65,7 +66,7 @@
             try {
                 PassLine.Size = new System.Drawing.Size(200, 2);
                 PassLine.Location = new System.Drawing.Point(PassTBox.Location.X, 186);
-                PassLine.BackColor = System.Drawing.Color.FromArgb(0x00, 0x63, 0xB1);
+                PassLine.BackColor = LinePass.BackColor;
             }
             catch (System.Exception Ex) { System.Windows.Forms.MessageBox.Show(Ex.Message); }
         }
@@ -94,6 +95,9 @@
             public static System.Drawing.Color BackColor { get; set; }
         }
         public struct CaptionPass {
+            public static System.Drawing.Color BackColor { get; set; }
+        }
+        public struct LinePass {
             public static System.Drawing.Color BackColor { get; set; }
         }
         #endregion

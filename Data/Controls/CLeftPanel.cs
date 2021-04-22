@@ -9,7 +9,7 @@
             try {
                 LeftPanel.Size = new System.Drawing.Size(250, 512);
                 LeftPanel.Location = new System.Drawing.Point(10, 54);
-                LeftPanel.BackColor = System.Drawing.Color.FromArgb(0xCC, 0xD5, 0xF0);
+                LeftPanel.BackColor = BackColor;
                 LeftPanel.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom;
             }
             catch (System.Exception Ex) { System.Windows.Forms.MessageBox.Show(Ex.Message); }
@@ -23,7 +23,7 @@
         }
         public static int Width { get => LeftPanel.Width; }
         public static int Height { get => LeftPanel.Height; }
-        public static System.Drawing.Color BackColor { get => LeftPanel.BackColor; set { LeftPanel.BackColor = value; } }
+        public static System.Drawing.Color BackColor { get; set; }
         #endregion
 
         #region Конструкторы
