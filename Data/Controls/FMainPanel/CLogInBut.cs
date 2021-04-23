@@ -47,10 +47,13 @@
                         command.Parameters.Add("@UsPass", MySql.Data.MySqlClient.MySqlDbType.VarChar).Value = pass;
                         adapter.SelectCommand = command;
                         adapter.Fill(table);
-                        if (table.Rows.Count > 0) { System.Windows.Forms.MessageBox.Show("Yes"); }
-                        else { System.Windows.Forms.MessageBox.Show("No"); }
-                        CLogIn.TextBoxLogin.Text = null;
-                        CLogIn.TextBoxPass.Text = null;
+                        if (table.Rows.Count > 0) {
+                            CAuthorization.Text = table.Rows[0].ItemArray[1].ToString();
+                            CLogIn.TextBoxLogin.Text = null;
+                            CLogIn.TextBoxPass.Text = null;
+                            LogInForm.LInForm.Close();
+                        }
+                        else { System.Windows.Forms.MessageBox.Show("Логин или пароль введены неверно", "Ошибка", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error); }
                     }
                     catch (System.Exception Ex) { System.Windows.Forms.MessageBox.Show(Ex.Message); }
                 };

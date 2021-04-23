@@ -16,34 +16,34 @@
         }
         private static void SetCaption() {
             try {
-                LogInPanel.Controls.Add(Caption);
-                Caption.Size = new System.Drawing.Size(148, 22);
-                Caption.Location = new System.Drawing.Point(1, 1);
-                Caption.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-                Caption.BackColor = CBackColor;
-                Caption.ForeColor = ForeColor;
-                Caption.Text = "АВТОРИЗАЦИЯ";
-                Caption.MouseEnter += (s, e) => {
+                LogInPanel.Controls.Add(CCaption);
+                CCaption.Size = new System.Drawing.Size(148, 22);
+                CCaption.Location = new System.Drawing.Point(1, 1);
+                CCaption.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+                CCaption.BackColor = CBackColor;
+                CCaption.ForeColor = ForeColor;
+                CCaption.Text = "АВТОРИЗАЦИЯ";
+                CCaption.MouseEnter += (s, e) => {
                     try {
                         if (!OnActiveMenu) {
                             LogInPanel.BackColor = System.Drawing.Color.FromArgb(0x40, 0x50, 0x8D);
-                            Caption.BackColor = System.Drawing.Color.FromArgb(0x40, 0x50, 0x8D);
+                            CCaption.BackColor = System.Drawing.Color.FromArgb(0x40, 0x50, 0x8D);
                         }
                     }
                     catch (System.Exception Ex) { System.Windows.Forms.MessageBox.Show(Ex.Message); }
                 };
-                Caption.MouseLeave += (s, e) => {
+                CCaption.MouseLeave += (s, e) => {
                     try {
                         if (!OnActiveMenu) {
                             LogInPanel.BackColor = System.Drawing.Color.FromArgb(0x5F, 0x6F, 0xA4);
-                            Caption.BackColor = System.Drawing.Color.FromArgb(0x5F, 0x6F, 0xA4);
+                            CCaption.BackColor = System.Drawing.Color.FromArgb(0x5F, 0x6F, 0xA4);
                         }
                     }
                     catch (System.Exception Ex) { System.Windows.Forms.MessageBox.Show(Ex.Message); }
                 };
-                Caption.Click += (s, e) => {
+                CCaption.Click += (s, e) => {
                     try {
-                        if (Caption.Text == "АВТОРИЗАЦИЯ") { LInForm.ShowDialog(); }
+                        if (CCaption.Text == "АВТОРИЗАЦИЯ") { LInForm.ShowDialog(); }
                     }
                     catch (System.Exception Ex) { System.Windows.Forms.MessageBox.Show(Ex.Message); }
                 };
@@ -59,7 +59,7 @@
         }
         public static int Width { get => LogInPanel.Width; }
         public static int Height { get => LogInPanel.Height; }
-        public static string Text { get => Caption.Text; set { Caption.Text = value; } }
+        public static string Text { get => CCaption.Text; set { CCaption.Text = value; } }
         public static System.Drawing.Color LBackColor { get; set; }
         public static System.Drawing.Color CBackColor { get; set; }
         public static System.Drawing.Color ForeColor { get; set; }
@@ -78,7 +78,7 @@
 
         #region Экземпляры
         private static readonly System.Windows.Forms.Panel LogInPanel = new System.Windows.Forms.Panel();
-        private static readonly System.Windows.Forms.Label Caption = new System.Windows.Forms.Label();
+        private static readonly System.Windows.Forms.Label CCaption = new System.Windows.Forms.Label();
         private static readonly LogInForm LInForm = new LogInForm();
         #endregion
     }

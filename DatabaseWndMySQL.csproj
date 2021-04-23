@@ -61,6 +61,7 @@
     </Compile>
     <Compile Include="Data\CColor.cs" />
     <Compile Include="Data\CDatabaseCon.cs" />
+    <Compile Include="Data\Controls\FLeftPanel\CListTables.cs" />
     <Compile Include="Data\Controls\FMainPanel\CAuthorization.cs" />
     <Compile Include="Data\Controls\CStatusStrip.cs" />
     <Compile Include="Data\Controls\CMainPanel.cs" />
