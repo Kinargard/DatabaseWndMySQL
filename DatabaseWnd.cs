@@ -1,10 +1,13 @@
 ﻿namespace DatabaseWndMySQL {
     public partial class DatabaseWnd : System.Windows.Forms.Form {
         public static DatabaseWnd MainForm = null;
+
         public static bool Theme = false;
+
         public struct Drawing {
             public static System.Drawing.Color BackColor { get; set; }
         }
+
         public DatabaseWnd() {
             InitializeComponent();
             MainForm = this;

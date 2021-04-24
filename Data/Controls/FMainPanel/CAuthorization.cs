@@ -1,10 +1,7 @@
 ﻿namespace DatabaseWndMySQL.Data.Controls.FMainPanel {
     public class CAuthorization {
-        #region Поля
         private static readonly bool OnActiveMenu = false;
-        #endregion
 
-        #region Методы
         private static void SetLogInPanel() {
             try {
                 LogInPanel.Size = new System.Drawing.Size(150, 24);
@@ -14,6 +11,7 @@
             }
             catch (System.Exception Ex) { System.Windows.Forms.MessageBox.Show(Ex.Message); }
         }
+
         private static void SetCaption() {
             try {
                 LogInPanel.Controls.Add(CCaption);
@@ -50,9 +48,7 @@
             }
             catch (System.Exception Ex) { System.Windows.Forms.MessageBox.Show(Ex.Message); }
         }
-        #endregion
 
-        #region Свойства
         public struct Location {
             public static int X { get => LogInPanel.Location.X; }
             public static int Y { get => LogInPanel.Location.Y; }
@@ -63,9 +59,7 @@
         public static System.Drawing.Color LBackColor { get; set; }
         public static System.Drawing.Color CBackColor { get; set; }
         public static System.Drawing.Color ForeColor { get; set; }
-        #endregion
 
-        #region Конструкторы
         public CAuthorization() {
             try {
                 DatabaseWnd.MainForm.Controls.Add(LogInPanel);
@@ -74,12 +68,9 @@
             }
             catch (System.Exception Ex) { System.Windows.Forms.MessageBox.Show(Ex.Message); }
         }
-        #endregion
 
-        #region Экземпляры
         private static readonly System.Windows.Forms.Panel LogInPanel = new System.Windows.Forms.Panel();
         private static readonly System.Windows.Forms.Label CCaption = new System.Windows.Forms.Label();
         private static readonly LogInForm LInForm = new LogInForm();
-        #endregion
     }
 }

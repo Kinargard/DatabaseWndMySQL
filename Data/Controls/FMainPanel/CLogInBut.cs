@@ -1,43 +1,34 @@
 ﻿namespace DatabaseWndMySQL.Data.Controls.FMainPanel {
     public class CLogInBut {
-        #region Поля
-
-        #endregion
-
-        #region Методы
-        private static void SetLogInBut() {
+        public CLogInBut() {
             try {
-                BLogInBut.Size = new System.Drawing.Size(200, 25);
-                BLogInBut.Location = new System.Drawing.Point(CLogIn.Caption.Location.X, 210);
-                BLogInBut.BackColor = LogInBut.BackColor;
+                LogInForm.LInForm.Controls.Add(LogInBut);
+                LogInBut.Controls.Add(Caption);
+                SetCaption();
             }
             catch (System.Exception Ex) { System.Windows.Forms.MessageBox.Show(Ex.Message); }
         }
-        private static void SetCCaption() {
+
+        private static void SetCaption() {
             try {
-                CCaption.Size = new System.Drawing.Size(198, 23);
-                CCaption.Location = new System.Drawing.Point(1, 1);
-                CCaption.BackColor = Caption.BackColor;
-                CCaption.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-                CCaption.Text = "ВХОД";
-                CCaption.MouseEnter += (s, e) => {
+                Caption.MouseEnter += (s, e) => {
                     try {
-                        CCaption.BackColor = System.Drawing.Color.FromArgb(0xE3, 0xEC, 0xFA);
-                        BLogInBut.BackColor = System.Drawing.Color.FromArgb(0x4A, 0x78, 0xB0);
+                        Caption.BackColor = System.Drawing.Color.FromArgb(0xE3, 0xEC, 0xFA);
+                        LogInBut.BackColor = System.Drawing.Color.FromArgb(0x4A, 0x78, 0xB0);
                     }
                     catch (System.Exception Ex) { System.Windows.Forms.MessageBox.Show(Ex.Message); }
                 };
-                CCaption.MouseLeave += (s, e) => {
+                Caption.MouseLeave += (s, e) => {
                     try {
-                        CCaption.BackColor = System.Drawing.SystemColors.Control;
-                        BLogInBut.BackColor = System.Drawing.Color.FromArgb(0xAB, 0xAB, 0xAB);
+                        Caption.BackColor = System.Drawing.SystemColors.Control;
+                        LogInBut.BackColor = System.Drawing.Color.FromArgb(0xAB, 0xAB, 0xAB);
                     }
                     catch (System.Exception Ex) { System.Windows.Forms.MessageBox.Show(Ex.Message); }
                 };
-                CCaption.Click += (s, e) => {
+                Caption.Click += (s, e) => {
                     try {
-                        string login = CLogIn.TextBoxLogin.Text;
-                        string pass = CLogIn.TextBoxPass.Text;
+                        string login = CLogIn.PTextBoxLogin.Text;
+                        string pass = CLogIn.PTextBoxPass.Text;
                         CDatabaseCon DataConn = new CDatabaseCon();
                         System.Data.DataTable table = new System.Data.DataTable();
                         MySql.Data.MySqlClient.MySqlDataAdapter adapter = new MySql.Data.MySqlClient.MySqlDataAdapter();
@@ -49,8 +40,8 @@
                         adapter.Fill(table);
                         if (table.Rows.Count > 0) {
                             CAuthorization.Text = table.Rows[0].ItemArray[1].ToString();
-                            CLogIn.TextBoxLogin.Text = null;
-                            CLogIn.TextBoxPass.Text = null;
+                            CLogIn.PTextBoxLogin.Text = "";
+                            CLogIn.PTextBoxPass.Text = "";
                             LogInForm.LInForm.Close();
                         }
                         else { System.Windows.Forms.MessageBox.Show("Логин или пароль введены неверно", "Ошибка", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error); }
@@ -60,32 +51,26 @@
             }
             catch (System.Exception Ex) { System.Windows.Forms.MessageBox.Show(Ex.Message); }
         }
-        #endregion
 
-        #region Свойства
-        public struct LogInBut {
+        public struct PLogInBut {
             public static System.Drawing.Color BackColor { get; set; }
         }
-        public struct Caption {
+        public struct PCaption {
             public static System.Drawing.Color BackColor { get; set; }
         }
-        #endregion
 
-        #region Конструкторы
-        public CLogInBut() {
-            try {
-                LogInForm.LInForm.Controls.Add(BLogInBut);
-                BLogInBut.Controls.Add(CCaption);
-                SetLogInBut();
-                SetCCaption();
-            }
-            catch (System.Exception Ex) { System.Windows.Forms.MessageBox.Show(Ex.Message); }
-        }
-        #endregion
+        private static readonly System.Windows.Forms.Panel LogInBut = new System.Windows.Forms.Panel() {
+            Size = new System.Drawing.Size(200, 25),
+            Location = new System.Drawing.Point(CLogIn.PCaption.Location.X, 210),
+            BackColor = PLogInBut.BackColor
+        };
 
-        #region Экземпляры
-        private static readonly System.Windows.Forms.Panel BLogInBut = new System.Windows.Forms.Panel();
-        private static readonly System.Windows.Forms.Label CCaption = new System.Windows.Forms.Label();
-        #endregion
+        private static readonly System.Windows.Forms.Label Caption = new System.Windows.Forms.Label() {
+            Size = new System.Drawing.Size(198, 23),
+            Location = new System.Drawing.Point(1, 1),
+            BackColor = PCaption.BackColor,
+            TextAlign = System.Drawing.ContentAlignment.TopCenter,
+            Text = "ВХОД"
+        };
     }
 }
