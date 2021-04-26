@@ -1,17 +1,9 @@
-#region Поля
-#endregion
+private void InitializeComponent() {
+	try {
 
-#region Методы
-#endregion
-
-#region Свойства
-#endregion
-
-#region Конструкторы
-#endregion
-
-#region Экземпляры
-#endregion
+	}
+	catch (System.Exception Ex) { System.Windows.Forms.MessageBox.Show(Ex.Message); }
+}
 
 try {
 

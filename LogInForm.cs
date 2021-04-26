@@ -5,8 +5,8 @@
             InitializeComponent();
             LInForm = this;
             _ = new Data.CColor();
-            _ = new Data.Controls.FMainPanel.CLogIn();
-            _ = new Data.Controls.FMainPanel.CLogInBut();
+            _ = new Data.Controls.FMainPanel.CLogInForm();
+            _ = new Data.Controls.FMainPanel.CLogInButton();
         }
     }
 }

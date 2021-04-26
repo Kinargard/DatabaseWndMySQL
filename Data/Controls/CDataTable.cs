@@ -1,5 +1,30 @@
 ﻿namespace DatabaseWndMySQL.Data.Controls {
     public class CDataTable {
+        private void InitializeComponent() {
+            try {
+                
+                // DataTable (DataGridView) ///////////////////////////////////
+                
+                DataTable.Size = new System.Drawing.Size(716, 508);
+                DataTable.Location = new System.Drawing.Point(1, 1);
+                DataTable.BackgroundColor = PDataBase.BackgroundColor;
+                DataTable.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right | System.Windows.Forms.AnchorStyles.Bottom;
+                DataTable.BorderStyle = System.Windows.Forms.BorderStyle.None;
+                
+                // Border (Panel) /////////////////////////////////////////////
+                
+                Border.Size = new System.Drawing.Size(718, 510);
+                Border.Location = new System.Drawing.Point(272, 55);
+                Border.BackColor = PBorder.BackColor;
+                Border.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right | System.Windows.Forms.AnchorStyles.Bottom;
+                Border.BorderStyle = System.Windows.Forms.BorderStyle.None;
+
+                ///////////////////////////////////////////////////////////////
+
+            }
+            catch (System.Exception Ex) { System.Windows.Forms.MessageBox.Show(Ex.Message); }
+        }
+
         public struct PDataBase {
             public struct Location {
                 public static int X { get => DataTable.Location.X; }
@@ -24,24 +49,12 @@
             try {
                 DatabaseWnd.MainForm.Controls.Add(Border);
                 Border.Controls.Add(DataTable);
+                InitializeComponent();
             }
             catch (System.Exception Ex) { System.Windows.Forms.MessageBox.Show(Ex.Message); }
         }
 
-        private static readonly System.Windows.Forms.DataGridView DataTable = new System.Windows.Forms.DataGridView() {
-            Size = new System.Drawing.Size(716, 508),
-            Location = new System.Drawing.Point(1, 1),
-            BackgroundColor = PDataBase.BackgroundColor,
-            Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right | System.Windows.Forms.AnchorStyles.Bottom,
-            BorderStyle = System.Windows.Forms.BorderStyle.None
-        };
-
-        private static readonly System.Windows.Forms.Panel Border = new System.Windows.Forms.Panel() {
-            Size = new System.Drawing.Size(718, 510),
-            Location = new System.Drawing.Point(272, 55),
-            BackColor = PBorder.BackColor,
-            Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right | System.Windows.Forms.AnchorStyles.Bottom,
-            BorderStyle = System.Windows.Forms.BorderStyle.None
-        };
+        private static readonly System.Windows.Forms.DataGridView DataTable = new System.Windows.Forms.DataGridView();
+        private static readonly System.Windows.Forms.Panel Border = new System.Windows.Forms.Panel();
     }
 }

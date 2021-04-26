@@ -62,13 +62,13 @@
     <Compile Include="Data\CColor.cs" />
     <Compile Include="Data\CDatabaseCon.cs" />
     <Compile Include="Data\Controls\FLeftPanel\CListTables.cs" />
-    <Compile Include="Data\Controls\FMainPanel\CAuthorization.cs" />
+    <Compile Include="Data\Controls\FMainPanel\CLogInPanel.cs" />
     <Compile Include="Data\Controls\CStatusStrip.cs" />
     <Compile Include="Data\Controls\CMainPanel.cs" />
     <Compile Include="Data\Controls\CLeftPanel.cs" />
     <Compile Include="Data\Controls\CDataTable.cs" />
-    <Compile Include="Data\Controls\FMainPanel\CLogIn.cs" />
-    <Compile Include="Data\Controls\FMainPanel\CLogInBut.cs" />
+    <Compile Include="Data\Controls\FMainPanel\CLogInForm.cs" />
+    <Compile Include="Data\Controls\FMainPanel\CLogInButton.cs" />
     <Compile Include="LogInForm.cs">
       <SubType>Form</SubType>
     </Compile>
