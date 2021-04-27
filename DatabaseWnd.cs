@@ -12,7 +12,7 @@
             InitializeComponent();
             MainForm = this;
             _ = new Data.CColor();
-            _ = new Data.Controls.FMainPanel.CLogInPanel();
+            _ = new Data.Controls.FMainPanel.CLogInPanel(); 
             _ = new Data.Controls.CDataTable();
             _ = new Data.Controls.CLeftPanel();
             _ = new Data.Controls.CMainPanel();
