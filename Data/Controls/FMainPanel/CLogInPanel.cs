@@ -5,10 +5,6 @@
         private void InitializeComponent() {
             try {
 
-                // Border (Panel) /////////////////////////////////////////////
-
-                //Border.Size
-
                 // LogInPanel (Panel) /////////////////////////////////////////
 
                 LogInPanel.Size = new System.Drawing.Size(150, 24);
@@ -37,8 +33,8 @@
                 Caption.MouseEnter += (s, e) => {
                     try {
                         if (!OnActiveMenu) {
-                            LogInPanel.BackColor = System.Drawing.Color.FromArgb(0x40, 0x50, 0x8D);
-                            Caption.BackColor = System.Drawing.Color.FromArgb(0x40, 0x50, 0x8D);
+                            LogInPanel.BackColor = System.Drawing.Color.FromArgb(0x00, 0x7A, 0xCC);
+                            Caption.BackColor = System.Drawing.Color.FromArgb(0x00, 0x7A, 0xCC);
                         }
                     }
                     catch (System.Exception Ex) { System.Windows.Forms.MessageBox.Show(Ex.Message); }
@@ -46,8 +42,8 @@
                 Caption.MouseLeave += (s, e) => {
                     try {
                         if (!OnActiveMenu) {
-                            LogInPanel.BackColor = System.Drawing.Color.FromArgb(0x5F, 0x6F, 0xA4);
-                            Caption.BackColor = System.Drawing.Color.FromArgb(0x5F, 0x6F, 0xA4);
+                            LogInPanel.BackColor = PLogInPanel.Drawing.BackColor;
+                            Caption.BackColor = PCaption.Drawing.BackColor;
                         }
                     }
                     catch (System.Exception Ex) { System.Windows.Forms.MessageBox.Show(Ex.Message); }
@@ -99,7 +95,6 @@
 
         private static readonly System.Windows.Forms.Panel LogInPanel = new System.Windows.Forms.Panel();
         private static readonly System.Windows.Forms.Label Caption = new System.Windows.Forms.Label();
-        private static readonly System.Windows.Forms.Panel Border = new System.Windows.Forms.Panel();
         private static readonly LogInForm LInForm = new LogInForm();
     }
 }

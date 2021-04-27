@@ -6,7 +6,7 @@
                 // Caption (Label) ////////////////////////////////////////////
                 
                 Caption.Size = new System.Drawing.Size(200, 25);
-                Caption.Location = new System.Drawing.Point((LogInForm.LInForm.ClientSize.Width / 2) - (Caption.Width / 2), 25);
+                Caption.Location = new System.Drawing.Point((LogInForm.LInForm.ClientSize.Width / 2) - (Caption.Width / 2), 40);
                 Caption.AutoSize = false;
                 Caption.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
                 Caption.Font = new System.Drawing.Font(LogInForm.LInForm.Font.Name, 14.0f, System.Drawing.FontStyle.Bold);
@@ -17,14 +17,14 @@
                 // LoginTBox (TextBox) ////////////////////////////////////////
                 
                 LoginTBox.Width = 200;
-                LoginTBox.Location = new System.Drawing.Point(Caption.Location.X, 95);
+                LoginTBox.Location = new System.Drawing.Point(Caption.Location.X, 125);
                 LoginTBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
                 LoginTBox.BackColor = PTextBoxLogin.Drawing.BackColor;
                 LoginTBox.ForeColor = PTextBoxLogin.Drawing.ForeColor;
                 
                 // LoginCaption (Label) ///////////////////////////////////////
                 
-                LoginCaption.Location = new System.Drawing.Point(LoginTBox.Location.X, 72);
+                LoginCaption.Location = new System.Drawing.Point(LoginTBox.Location.X, 102);
                 LoginCaption.Font = new System.Drawing.Font(LogInForm.LInForm.Font.Name, 11.0f, System.Drawing.FontStyle.Regular);
                 LoginCaption.Text = "Логин:";
                 LoginCaption.BackColor = PCaptionLogin.Drawing.BackColor;
@@ -33,13 +33,13 @@
                 // LoginLine (Panel) //////////////////////////////////////////
                 
                 LoginLine.Size = new System.Drawing.Size(200, 2);
-                LoginLine.Location = new System.Drawing.Point(LoginTBox.Location.X, 116);
+                LoginLine.Location = new System.Drawing.Point(LoginTBox.Location.X, 146);
                 LoginLine.BackColor = PLineLogin.Drawing.BackColor;
                 
                 // PassTBox (TextBox) /////////////////////////////////////////
                 
                 PassTBox.Width = 200;
-                PassTBox.Location = new System.Drawing.Point(Caption.Location.X, 165);
+                PassTBox.Location = new System.Drawing.Point(Caption.Location.X, 195);
                 PassTBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
                 PassTBox.BackColor = PTextBoxPass.Drawing.BackColor;
                 PassTBox.PasswordChar = '*';
@@ -47,7 +47,7 @@
                 
                 // PassCaption (Label) ////////////////////////////////////////
                 
-                PassCaption.Location = new System.Drawing.Point(PassTBox.Location.X, 142);
+                PassCaption.Location = new System.Drawing.Point(PassTBox.Location.X, 172);
                 PassCaption.Font = new System.Drawing.Font(LogInForm.LInForm.Font.Name, 11.0f, System.Drawing.FontStyle.Regular);
                 PassCaption.Text = "Пароль:";
                 PassCaption.BackColor = PCaptionPass.Drawing.BackColor;
@@ -56,7 +56,7 @@
                 // PassLine (Panel) ///////////////////////////////////////////
                 
                 PassLine.Size = new System.Drawing.Size(200, 2);
-                PassLine.Location = new System.Drawing.Point(PassTBox.Location.X, 186);
+                PassLine.Location = new System.Drawing.Point(PassTBox.Location.X, 216);
                 PassLine.BackColor = PLinePass.Drawing.BackColor;
 
                 ///////////////////////////////////////////////////////////////

@@ -6,7 +6,7 @@
                 // LogInBut (Panel) ///////////////////////////////////////////
                 
                 LogInButton.Size = new System.Drawing.Size(200, 25);
-                LogInButton.Location = new System.Drawing.Point(CLogInForm.PCaption.Location.X, 210);
+                LogInButton.Location = new System.Drawing.Point(CLogInForm.PCaption.Location.X, 240);
                 LogInButton.BackColor = PLogInButton.Drawing.BackColor;
                 
                 // Caption (Label) ////////////////////////////////////////////
@@ -29,15 +29,15 @@
             try {
                 Caption.MouseEnter += (s, e) => {
                     try {
-                        Caption.BackColor = System.Drawing.Color.FromArgb(0xE3, 0xEC, 0xFA);
-                        LogInButton.BackColor = System.Drawing.Color.FromArgb(0x4A, 0x78, 0xB0);
+                        Caption.BackColor = System.Drawing.Color.FromArgb(0x33, 0x33, 0x33);
+                        LogInButton.BackColor = System.Drawing.Color.FromArgb(0x00, 0x7A, 0xCC);
                     }
                     catch (System.Exception Ex) { System.Windows.Forms.MessageBox.Show(Ex.Message); }
                 };
                 Caption.MouseLeave += (s, e) => {
                     try {
-                        Caption.BackColor = System.Drawing.SystemColors.Control;
-                        LogInButton.BackColor = System.Drawing.Color.FromArgb(0xAB, 0xAB, 0xAB);
+                        Caption.BackColor = PCaption.Drawing.BackColor;
+                        LogInButton.BackColor = PLogInButton.Drawing.BackColor;
                     }
                     catch (System.Exception Ex) { System.Windows.Forms.MessageBox.Show(Ex.Message); }
                 };

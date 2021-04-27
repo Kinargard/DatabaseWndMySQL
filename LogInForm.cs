@@ -15,7 +15,7 @@
             _ = new Data.Controls.FMainPanel.CLogInButton();
             LInForm.BackColor = Drawing.BackColor;
             LInForm.ForeColor = Drawing.ForeColor;
-            //LInForm.Text = $"{LInForm.ClientSize.Width} x {LInForm.ClientSize.Height}";
+            LInForm.Text = $"{LInForm.ClientSize.Width} x {LInForm.ClientSize.Height}";
         }
     }
 }
