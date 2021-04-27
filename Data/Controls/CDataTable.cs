@@ -3,22 +3,23 @@
         private void InitializeComponent() {
             try {
                 
-                // DataTable (DataGridView) ///////////////////////////////////
-                
-                DataTable.Size = new System.Drawing.Size(716, 508);
-                DataTable.Location = new System.Drawing.Point(1, 1);
-                DataTable.BackgroundColor = PDataBase.BackgroundColor;
-                DataTable.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right | System.Windows.Forms.AnchorStyles.Bottom;
-                DataTable.BorderStyle = System.Windows.Forms.BorderStyle.None;
-                
                 // Border (Panel) /////////////////////////////////////////////
                 
                 Border.Size = new System.Drawing.Size(718, 510);
                 Border.Location = new System.Drawing.Point(272, 55);
-                Border.BackColor = PBorder.BackColor;
+                Border.BackColor = PBorder.Drawing.BackColor;
                 Border.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right | System.Windows.Forms.AnchorStyles.Bottom;
                 Border.BorderStyle = System.Windows.Forms.BorderStyle.None;
 
+                // DataTable (DataGridView) ///////////////////////////////////
+                
+                DataTable.Size = new System.Drawing.Size(716, 508);
+                DataTable.Location = new System.Drawing.Point(1, 1);
+                DataTable.BackgroundColor = PDataBase.Drawing.BackgroundColor;
+                DataTable.ForeColor = PDataBase.Drawing.ForeColor;
+                DataTable.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right | System.Windows.Forms.AnchorStyles.Bottom;
+                DataTable.BorderStyle = System.Windows.Forms.BorderStyle.None;
+                
                 ///////////////////////////////////////////////////////////////
 
             }
@@ -32,7 +33,10 @@
             }
             public static int Width { get => DataTable.Width; }
             public static int Height { get => DataTable.Height; }
-            public static System.Drawing.Color BackgroundColor { get; set; }
+            public struct Drawing {
+                public static System.Drawing.Color BackgroundColor { get; set; }
+                public static System.Drawing.Color ForeColor { get; set; }
+            }
         }
 
         public struct PBorder {
@@ -42,7 +46,9 @@
             }
             public static int Width { get => Border.Width; }
             public static int Height { get => Border.Height; }
-            public static System.Drawing.Color BackColor { get; set; }
+            public struct Drawing {
+                public static System.Drawing.Color BackColor { get; set; }
+            }
         }
 
         public CDataTable() {

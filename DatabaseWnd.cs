@@ -2,10 +2,11 @@
     public partial class DatabaseWnd : System.Windows.Forms.Form {
         public static DatabaseWnd MainForm = null;
 
-        public static bool Theme = false;
+        public static bool Theme = true;
 
         public struct Drawing {
             public static System.Drawing.Color BackColor { get; set; }
+            public static System.Drawing.Color ForeColor { get; set; }
         }
 
         public DatabaseWnd() {
@@ -18,6 +19,7 @@
             _ = new Data.Controls.CMainPanel();
             _ = new Data.Controls.CStatusStrip();
             MainForm.BackColor = Drawing.BackColor;
+            MainForm.ForeColor = Drawing.ForeColor;
             //MainForm.Text = $"{MainForm.ClientSize.Width} x {MainForm.ClientSize.Height}";
         }
     }

@@ -3,19 +3,19 @@
         private void InitializeComponent() {
             try {
                 
-                // StatusStrip (Panel) ////////////////////////////////////////
-                
-                StatusStrip.Size = new System.Drawing.Size(1000, 24);
-                StatusStrip.Location = new System.Drawing.Point(0, 1);
-                StatusStrip.BackColor = PStatusStrip.BackColor;
-                StatusStrip.Anchor = System.Windows.Forms.AnchorStyles.Right | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left;
-                
                 // Border (Panel) /////////////////////////////////////////////
                 
                 Border.Size = new System.Drawing.Size(1000, 25);
                 Border.Location = new System.Drawing.Point(0, 575);
-                Border.BackColor = PBorder.BackColor;
+                Border.BackColor = PBorder.Drawing.BackColor;
                 Border.Anchor = System.Windows.Forms.AnchorStyles.Right | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left;
+                
+                // StatusStrip (Panel) ////////////////////////////////////////
+                
+                StatusStrip.Size = new System.Drawing.Size(1000, 24);
+                StatusStrip.Location = new System.Drawing.Point(0, 1);
+                StatusStrip.BackColor = PStatusStrip.Drawing.BackColor;
+                StatusStrip.Anchor = System.Windows.Forms.AnchorStyles.Right | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left;
                 
                 ///////////////////////////////////////////////////////////////
                 
@@ -30,7 +30,9 @@
             }
             public static int Width { get => StatusStrip.Width; }
             public static int Height { get => StatusStrip.Height; }
-            public static System.Drawing.Color BackColor { get; set; }
+            public struct Drawing {
+                public static System.Drawing.Color BackColor { get; set; }
+            }
         }
 
         public struct PBorder {
@@ -40,7 +42,9 @@
             }
             public static int Width { get => Border.Width; }
             public static int Height { get => Border.Height; }
-            public static System.Drawing.Color BackColor { get; set; }
+            public struct Drawing {
+                public static System.Drawing.Color BackColor { get; set; }
+            }
         }
 
         public CStatusStrip() {

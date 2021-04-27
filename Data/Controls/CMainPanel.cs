@@ -3,20 +3,20 @@
         private void InitializeComponent() {
             try {
                 
-                // MainPanel (Panel) //////////////////////////////////////////
-                
-                MainPanel.Size = new System.Drawing.Size(1000, 44);
-                MainPanel.Location = new System.Drawing.Point(0, 0);
-                MainPanel.BackColor = PMainPanel.BackColor;
-                MainPanel.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
-                
                 // Border (Panel) /////////////////////////////////////////////
                 
                 Border.Size = new System.Drawing.Size(1000, 45);
                 Border.Location = new System.Drawing.Point(0, 0);
-                Border.BackColor = PBorder.BackColor;
+                Border.BackColor = PBorder.Drawing.BackColor;
                 Border.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
 
+                // MainPanel (Panel) //////////////////////////////////////////
+                
+                MainPanel.Size = new System.Drawing.Size(1000, 44);
+                MainPanel.Location = new System.Drawing.Point(0, 0);
+                MainPanel.BackColor = PMainPanel.Drawing.BackColor;
+                MainPanel.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+                
                 ///////////////////////////////////////////////////////////////
                 
             }
@@ -31,7 +31,9 @@
 
             public static int Width { get => MainPanel.Width; }
             public static int Height { get => MainPanel.Height; }
-            public static System.Drawing.Color BackColor { get; set; }
+            public struct Drawing {
+                public static System.Drawing.Color BackColor { get; set; }
+            }
         }
 
         public struct PBorder {
@@ -42,7 +44,9 @@
 
             public static int Width { get => Border.Width; }
             public static int Height { get => Border.Height; }
-            public static System.Drawing.Color BackColor { get; set; }
+            public struct Drawing {
+                public static System.Drawing.Color BackColor { get; set; }
+            }
         }
 
         public CMainPanel() {

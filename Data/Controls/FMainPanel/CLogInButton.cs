@@ -7,13 +7,14 @@
                 
                 LogInButton.Size = new System.Drawing.Size(200, 25);
                 LogInButton.Location = new System.Drawing.Point(CLogInForm.PCaption.Location.X, 210);
-                LogInButton.BackColor = PLogInButton.BackColor;
+                LogInButton.BackColor = PLogInButton.Drawing.BackColor;
                 
                 // Caption (Label) ////////////////////////////////////////////
                 
                 Caption.Size = new System.Drawing.Size(198, 23);
                 Caption.Location = new System.Drawing.Point(1, 1);
-                Caption.BackColor = PCaption.BackColor;
+                Caption.BackColor = PCaption.Drawing.BackColor;
+                Caption.ForeColor = PCaption.Drawing.ForeColor;
                 Caption.TextAlign = System.Drawing.ContentAlignment.TopCenter;
                 Caption.Text = "ВХОД";
                 CaptionEvents();
@@ -74,7 +75,9 @@
             }
             public static int Width { get => LogInButton.Width; }
             public static int Height { get => LogInButton.Height; }
-            public static System.Drawing.Color BackColor { get; set; }
+            public struct Drawing {
+                public static System.Drawing.Color BackColor { get; set; }
+            }
         }
 
         public struct PCaption {
@@ -84,7 +87,10 @@
             }
             public static int Width { get => Caption.Width; }
             public static int Height { get => Caption.Height; }
-            public static System.Drawing.Color BackColor { get; set; }
+            public struct Drawing {
+                public static System.Drawing.Color BackColor { get; set; }
+                public static System.Drawing.Color ForeColor { get; set; }
+            }
         }
 
         public CLogInButton() {

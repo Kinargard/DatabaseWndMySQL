@@ -11,48 +11,53 @@
                 Caption.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
                 Caption.Font = new System.Drawing.Font(LogInForm.LInForm.Font.Name, 14.0f, System.Drawing.FontStyle.Bold);
                 Caption.Text = "АВТОРИЗАЦИЯ";
-                Caption.BackColor = PCaption.BackColor;
+                Caption.BackColor = PCaption.Drawing.BackColor;
+                Caption.ForeColor = PCaption.Drawing.ForeColor;
                 
                 // LoginTBox (TextBox) ////////////////////////////////////////
                 
                 LoginTBox.Width = 200;
                 LoginTBox.Location = new System.Drawing.Point(Caption.Location.X, 95);
                 LoginTBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-                LoginTBox.BackColor = PTextBoxLogin.BackColor;
+                LoginTBox.BackColor = PTextBoxLogin.Drawing.BackColor;
+                LoginTBox.ForeColor = PTextBoxLogin.Drawing.ForeColor;
                 
                 // LoginCaption (Label) ///////////////////////////////////////
                 
                 LoginCaption.Location = new System.Drawing.Point(LoginTBox.Location.X, 72);
                 LoginCaption.Font = new System.Drawing.Font(LogInForm.LInForm.Font.Name, 11.0f, System.Drawing.FontStyle.Regular);
                 LoginCaption.Text = "Логин:";
-                LoginCaption.BackColor = PCaptionLogin.BackColor;
+                LoginCaption.BackColor = PCaptionLogin.Drawing.BackColor;
+                LoginCaption.ForeColor = PCaptionLogin.Drawing.ForeColor;
                 
                 // LoginLine (Panel) //////////////////////////////////////////
                 
                 LoginLine.Size = new System.Drawing.Size(200, 2);
                 LoginLine.Location = new System.Drawing.Point(LoginTBox.Location.X, 116);
-                LoginLine.BackColor = PLineLogin.BackColor;
+                LoginLine.BackColor = PLineLogin.Drawing.BackColor;
                 
                 // PassTBox (TextBox) /////////////////////////////////////////
                 
                 PassTBox.Width = 200;
                 PassTBox.Location = new System.Drawing.Point(Caption.Location.X, 165);
                 PassTBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-                PassTBox.BackColor = PTextBoxPass.BackColor;
+                PassTBox.BackColor = PTextBoxPass.Drawing.BackColor;
                 PassTBox.PasswordChar = '*';
+                PassTBox.ForeColor = PTextBoxPass.Drawing.ForeColor;
                 
                 // PassCaption (Label) ////////////////////////////////////////
                 
                 PassCaption.Location = new System.Drawing.Point(PassTBox.Location.X, 142);
                 PassCaption.Font = new System.Drawing.Font(LogInForm.LInForm.Font.Name, 11.0f, System.Drawing.FontStyle.Regular);
                 PassCaption.Text = "Пароль:";
-                PassCaption.BackColor = PCaptionPass.BackColor;
+                PassCaption.BackColor = PCaptionPass.Drawing.BackColor;
+                PassCaption.ForeColor = PCaptionPass.Drawing.ForeColor;
                 
                 // PassLine (Panel) ///////////////////////////////////////////
                 
                 PassLine.Size = new System.Drawing.Size(200, 2);
                 PassLine.Location = new System.Drawing.Point(PassTBox.Location.X, 186);
-                PassLine.BackColor = PLinePass.BackColor;
+                PassLine.BackColor = PLinePass.Drawing.BackColor;
 
                 ///////////////////////////////////////////////////////////////
 
@@ -65,32 +70,46 @@
                 public static int X { get => Caption.Location.X; }
                 public static int Y { get => Caption.Location.Y; }
             }
-            public static System.Drawing.Color BackColor { get; set; }
-            public static System.Drawing.Color ForeColor { get; set; }
+            public struct Drawing {
+                public static System.Drawing.Color BackColor { get; set; }
+                public static System.Drawing.Color ForeColor { get; set; }
+            }
         }
         public struct PTextBoxLogin {
             public static string Text { get => LoginTBox.Text; set { LoginTBox.Text = value; } }
-            public static System.Drawing.Color BackColor { get; set; }
-            public static System.Drawing.Color ForeColor { get; set; }
+            public struct Drawing {
+                public static System.Drawing.Color BackColor { get; set; }
+                public static System.Drawing.Color ForeColor { get; set; }
+            }
         }
         public struct PTextBoxPass {
             public static string Text { get => PassTBox.Text; set { PassTBox.Text = value; } }
-            public static System.Drawing.Color BackColor { get; set; }
-            public static System.Drawing.Color ForeColor { get; set; }
+            public struct Drawing {
+                public static System.Drawing.Color BackColor { get; set; }
+                public static System.Drawing.Color ForeColor { get; set; }
+            }
         }
         public struct PCaptionLogin {
-            public static System.Drawing.Color BackColor { get; set; }
-            public static System.Drawing.Color ForeColor { get; set; }
+            public struct Drawing {
+                public static System.Drawing.Color BackColor { get; set; }
+                public static System.Drawing.Color ForeColor { get; set; }
+            }
         }
         public struct PLineLogin {
-            public static System.Drawing.Color BackColor { get; set; }
+            public struct Drawing {
+                public static System.Drawing.Color BackColor { get; set; }
+            }
         }
         public struct PCaptionPass {
-            public static System.Drawing.Color BackColor { get; set; }
-            public static System.Drawing.Color ForeColor { get; set; }
+            public struct Drawing {
+                public static System.Drawing.Color BackColor { get; set; }
+                public static System.Drawing.Color ForeColor { get; set; }
+            }
         }
         public struct PLinePass {
-            public static System.Drawing.Color BackColor { get; set; }
+            public struct Drawing {
+                public static System.Drawing.Color BackColor { get; set; }
+            }
         }
 
         public CLogInForm() {

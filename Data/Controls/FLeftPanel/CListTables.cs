@@ -1,22 +1,17 @@
 ﻿namespace DatabaseWndMySQL.Data.Controls.FLeftPanel {
     public class CListTables {
-        #region Поля
-        #endregion
+        private void InitializeComponent() {
+            try {
 
-        #region Методы
-        #endregion
-
-        #region Свойства
-        #endregion
-
-        #region Конструкторы
-        public CListTables() {
-
+            }
+            catch (System.Exception Ex) { System.Windows.Forms.MessageBox.Show(Ex.Message); }
         }
-        #endregion
 
-        #region Экземпляры
-
-        #endregion
+        public CListTables() {
+            try {
+                InitializeComponent();
+            }
+            catch (System.Exception Ex) { System.Windows.Forms.MessageBox.Show(Ex.Message); }
+        }
     }
 }

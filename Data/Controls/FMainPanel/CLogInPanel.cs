@@ -4,12 +4,16 @@
 
         private void InitializeComponent() {
             try {
-                
+
+                // Border (Panel) /////////////////////////////////////////////
+
+                //Border.Size
+
                 // LogInPanel (Panel) /////////////////////////////////////////
-                
+
                 LogInPanel.Size = new System.Drawing.Size(150, 24);
                 LogInPanel.Location = new System.Drawing.Point(840, 10);
-                LogInPanel.BackColor = PLogInPanel.BackColor;
+                LogInPanel.BackColor = PLogInPanel.Drawing.BackColor;
                 LogInPanel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
                 
                 // Caption (Label) ////////////////////////////////////////////
@@ -17,8 +21,8 @@
                 Caption.Size = new System.Drawing.Size(148, 22);
                 Caption.Location = new System.Drawing.Point(1, 1);
                 Caption.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-                Caption.BackColor = PCaption.BackColor;
-                Caption.ForeColor = PCaption.ForeColor;
+                Caption.BackColor = PCaption.Drawing.BackColor;
+                Caption.ForeColor = PCaption.Drawing.ForeColor;
                 Caption.Text = "АВТОРИЗАЦИЯ";
                 CaptionEvents();
 
@@ -65,7 +69,9 @@
             }
             public static int Width { get => LogInPanel.Width; }
             public static int Height { get => LogInPanel.Height; }
-            public static System.Drawing.Color BackColor { get; set; }
+            public struct Drawing {
+                public static System.Drawing.Color BackColor { get; set; }
+            }
         }
 
         public struct PCaption {
@@ -76,8 +82,10 @@
             public static int Width { get => Caption.Width; }
             public static int Height { get => Caption.Height; }
             public static string Text { get => Caption.Text; set { Caption.Text = value; } }
-            public static System.Drawing.Color BackColor { get; set; }
-            public static System.Drawing.Color ForeColor { get; set; }
+            public struct Drawing {
+                public static System.Drawing.Color BackColor { get; set; }
+                public static System.Drawing.Color ForeColor { get; set; }
+            }
         }
 
         public CLogInPanel() {
@@ -91,6 +99,7 @@
 
         private static readonly System.Windows.Forms.Panel LogInPanel = new System.Windows.Forms.Panel();
         private static readonly System.Windows.Forms.Label Caption = new System.Windows.Forms.Label();
+        private static readonly System.Windows.Forms.Panel Border = new System.Windows.Forms.Panel();
         private static readonly LogInForm LInForm = new LogInForm();
     }
 }
