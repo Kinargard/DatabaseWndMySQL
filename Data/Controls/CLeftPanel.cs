@@ -53,7 +53,9 @@
             try {
                 DatabaseWnd.MainForm.Controls.Add(Border);
                 Border.Controls.Add(LeftPanel);
+                LeftPanel.Controls.Add(FLeftPanel.CListTables.PBorder.AListTables);
                 InitializeComponent();
+                _ = new FLeftPanel.CListTables();
             }
             catch (System.Exception Ex) { System.Windows.Forms.MessageBox.Show(Ex.Message); }
         }

@@ -43,10 +43,17 @@
                     Controls.FMainPanel.CLogInForm.PLinePass.Drawing.BackColor = System.Drawing.Color.FromArgb(0x00, 0x7A, 0xCC);
 
                     Controls.FMainPanel.CLogInButton.PLogInButton.Drawing.BackColor = System.Drawing.Color.FromArgb(0x3F, 0x3F, 0x46);
-                    Controls.FMainPanel.CLogInButton.PCaption.Drawing.BackColor = System.Drawing.Color.FromArgb(0x25, 0x25, 0x26);
+                    Controls.FMainPanel.CLogInButton.PCaption.Drawing.BackColor = System.Drawing.Color.FromArgb(0x2D, 0x2D, 0x30);
                     Controls.FMainPanel.CLogInButton.PCaption.Drawing.ForeColor = System.Drawing.Color.FromArgb(0xFF, 0xFF, 0xFF);
 
-
+                    Controls.FLeftPanel.CListTables.PBorder.Drawing.BackColor = System.Drawing.Color.FromArgb(0x3F, 0x3F, 0x46);
+                    Controls.FLeftPanel.CListTables.PCaption.Drawing.BackColor = System.Drawing.Color.FromArgb(0x2D, 0x2D, 0x30);
+                    Controls.FLeftPanel.CListTables.PCaption.Drawing.ForeColor = System.Drawing.Color.FromArgb(0xFF, 0xFF, 0xFF);
+                    Controls.FLeftPanel.CListTables.PTriangle.Drawing.BackColor = System.Drawing.Color.FromArgb(0x2D, 0x2D, 0x30);
+                    Controls.FLeftPanel.CListTables.PTriangle.Drawing.ForeColor = System.Drawing.Color.FromArgb(0xFF, 0xFF, 0xFF);
+                    Controls.FLeftPanel.CListTables.PBorderEvents.Drawing.BackColor = System.Drawing.Color.FromArgb(0x1B, 0x1B, 0x1C);
+                    Controls.FLeftPanel.CListTables.PBorderEvents.Drawing.ForeColor = System.Drawing.Color.FromArgb(0xFF, 0xFF, 0xFF);
+                    Controls.FLeftPanel.CListTables.PListTables.Drawing.BackColor = System.Drawing.Color.FromArgb(0x1B, 0x1B, 0x1C);
                 }
             }
             catch (System.Exception Ex) { System.Windows.Forms.MessageBox.Show(Ex.Message); }
