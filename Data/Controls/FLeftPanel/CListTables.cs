@@ -1,14 +1,14 @@
 ﻿namespace DatabaseWndMySQL.Data.Controls.FLeftPanel {
     public class CListTables {
         private static bool BTriangle = false;
-        private static System.Collections.Generic.List<System.Windows.Forms.Label> labels = new System.Collections.Generic.List<System.Windows.Forms.Label>();
+        private static readonly System.Collections.Generic.List<System.Windows.Forms.Label> labels = new System.Collections.Generic.List<System.Windows.Forms.Label>();
 
         private void InitializeComponent() {
             try {
 
                 // Border (Panel) /////////////////////////////////////////////
 
-                Border.Size = new System.Drawing.Size(250, 209);
+                Border.Size = new System.Drawing.Size(250, 24);
                 Border.Location = new System.Drawing.Point(0, 0);
                 Border.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
                 Border.BackColor = PBorder.Drawing.BackColor;
@@ -48,8 +48,8 @@
             try {
                 Triangle.Click += (s, e) => {
                     try {
-                        if (!BTriangle) { Triangle.Text = "▲"; BTriangle = true; }
-                        else { Triangle.Text = "▼"; BTriangle = false; }
+                        if (!BTriangle) { Triangle.Text = "▲"; BTriangle = true; Border.Height = 209; }
+                        else { Triangle.Text = "▼"; BTriangle = false; Border.Height = 24; }
                     }
                     catch (System.Exception Ex) { System.Windows.Forms.MessageBox.Show(Ex.Message); }
                 };
@@ -92,6 +92,19 @@
                         label.MouseLeave += (s, e) => {
                             try {
                                 label.BackColor = PBorderEvents.Drawing.BackColor;
+                            }
+                            catch (System.Exception Ex) { System.Windows.Forms.MessageBox.Show(Ex.Message); }
+                        };
+                        label.Click += (s, e) => {
+                            try {
+                                CDatabaseCon DataConn1 = new CDatabaseCon();
+                                MySql.Data.MySqlClient.MySqlDataAdapter adapter1 = new MySql.Data.MySqlClient.MySqlDataAdapter();
+                                System.Data.DataTable table1 = new System.Data.DataTable();
+                                string com1 = $"SELECT * FROM {label.Text};";
+                                MySql.Data.MySqlClient.MySqlCommand command1 = new MySql.Data.MySqlClient.MySqlCommand(com1, DataConn1.GetConnection());
+                                adapter.SelectCommand = command1;
+                                adapter.Fill(table1);
+                                CDataTable.PDataBase.DataGridView.DataSource = table1;
                             }
                             catch (System.Exception Ex) { System.Windows.Forms.MessageBox.Show(Ex.Message); }
                         };

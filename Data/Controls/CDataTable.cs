@@ -37,6 +37,7 @@
                 public static System.Drawing.Color BackgroundColor { get; set; }
                 public static System.Drawing.Color ForeColor { get; set; }
             }
+            public static System.Windows.Forms.DataGridView DataGridView { get => DataTable; }
         }
 
         public struct PBorder {
