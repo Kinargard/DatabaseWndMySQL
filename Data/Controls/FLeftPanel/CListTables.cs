@@ -105,6 +105,12 @@
                                 adapter.SelectCommand = command1;
                                 adapter.Fill(table1);
                                 CDataTable.PDataBase.DataGridView.DataSource = table1;
+                                CDataTable.PDataBase.DataGridView.Columns[0].AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+                                CDataTable.PDataBase.DataGridView.Columns[0].Resizable = System.Windows.Forms.DataGridViewTriState.False;
+                                CDataTable.PDataBase.DataGridView.Columns[0].Width = 25;
+                                foreach (System.Windows.Forms.DataGridViewColumn column in CDataTable.PDataBase.DataGridView.Columns) {
+                                    column.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+                                }
                             }
                             catch (System.Exception Ex) { System.Windows.Forms.MessageBox.Show(Ex.Message); }
                         };

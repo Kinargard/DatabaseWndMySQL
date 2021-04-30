@@ -19,7 +19,28 @@
                 DataTable.ForeColor = PDataBase.Drawing.ForeColor;
                 DataTable.Anchor = System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right | System.Windows.Forms.AnchorStyles.Bottom;
                 DataTable.BorderStyle = System.Windows.Forms.BorderStyle.None;
-                
+                DataTable.AdvancedCellBorderStyle.All = System.Windows.Forms.DataGridViewAdvancedCellBorderStyle.Single;
+                DataTable.AdvancedColumnHeadersBorderStyle.All = System.Windows.Forms.DataGridViewAdvancedCellBorderStyle.Single;
+                DataTable.AdvancedRowHeadersBorderStyle.All = System.Windows.Forms.DataGridViewAdvancedCellBorderStyle.Single;
+                DataTable.AllowUserToOrderColumns = false;
+                DataTable.AllowUserToResizeColumns = false;
+                DataTable.AllowUserToResizeRows = false;
+                DataTable.EnableHeadersVisualStyles = false;
+                DataTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+                DataTable.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Single;
+                DataTable.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+                DataTable.ColumnHeadersDefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+                DataTable.ColumnHeadersDefaultCellStyle.BackColor = PDataBase.Drawing.BackgroundColor;
+                DataTable.ColumnHeadersDefaultCellStyle.ForeColor = PDataBase.Drawing.ForeColor;
+                DataTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+                DataTable.DefaultCellStyle.BackColor = PDataBase.Drawing.BackgroundColor;
+                DataTable.DefaultCellStyle.ForeColor = PDataBase.Drawing.ForeColor;
+                DataTable.GridColor = PBorder.Drawing.BackColor;
+                DataTable.ReadOnly = true;
+                DataTable.RowHeadersVisible = false;
+                DataTable.ColumnHeadersDefaultCellStyle.SelectionBackColor = PDataBase.Drawing.BackgroundColor;
+                DataTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+
                 ///////////////////////////////////////////////////////////////
 
             }
